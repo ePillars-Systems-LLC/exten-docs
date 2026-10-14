@@ -1,12 +1,12 @@
-# Odoo for DocuSign IAM
-Learn how to install, configure, and use the Odoo Extension for DocuSign to seamlessly synchronize customer records and agreement data between DocuSign and your Odoo ERP.
+# Odoo for Docusign IAM
+Learn how to install, configure, and use the Odoo Extension for Docusign to seamlessly synchronize customer records and agreement data between Docusign and your Odoo ERP.
 ## Overview
-The Odoo Extension for DocuSign integrates your Odoo ERP database with DocuSign App Center and eSignature workflows. It enables automated record verification, customer lookup, and automated data entry during and after agreement signing.
+The Odoo Extension for Docusign integrates your Odoo ERP database with Docusign App Center and eSignature workflows. It enables automated record verification, customer lookup, and automated data entry during and after agreement signing.
 ## How to Install and Configure
-### Step 1: Locate the Odoo App in DocuSign App Center
-![Odoo app listing in DocuSign App Center](assets/01-odoo-app-center.png) 
+### Step 1: Locate the Odoo App in Docusign App Center
+![Odoo app listing in Docusign App Center](assets/01-odoo-app-center.png) 
 
-In your DocuSign account, navigate to **App Center** and search for **Odoo** by ePillars Systems. 
+In your Docusign account, navigate to **App Center** and search for **Odoo** by ePillars Systems. 
 
 ![Install App action](assets/02-install-app.png)
 
@@ -34,7 +34,7 @@ Click **Install App**.
 ## How to Use the App
 - In the workflow builder, click **Add Step**, then choose **Read from Odoo** or **Writeback to Odoo** based on the workflow requirement.
 ### 1. Search and Select Records
-Use the **Read from Odoo** action in DocuSign workflows to query contacts by ID, name, email, or phone number directly from your active Odoo database.
+Use the **Read from Odoo** action in Docusign workflows to query contacts by ID, name, email, or phone number directly from your active Odoo database.
 
 <img src="assets/10-search-records.png" width="500" alt="Search and select Odoo records">   <br>
 
@@ -53,12 +53,12 @@ Choose the **Writeback to Odoo** step to create or update customer records in Od
 ## Frequently Asked Questions
 ### Do I need an active Odoo subscription?
 - Yes, you need access to an active Odoo instance (Community or Enterprise edition, hosted on Odoo.sh, self-hosted, or Odoo Online) with XML-RPC access enabled.
-### Is my Odoo password stored by DocuSign?
+### Is my Odoo password stored by Docusign?
 - No. Passwords are processed securely over encrypted SSL connections to authenticate XML-RPC sessions and generate OAuth access tokens. Your credentials are never shared with third parties.
 ### What Odoo data models are supported?
 - The extension currently supports Contacts and Customers. Support for Sales Orders and Invoices can be enabled upon request.
 ### How do I revoke access?
-- You can disconnect or delete the connection at any time from **DocuSign App Center → Connected Apps**.
+- You can disconnect or delete the connection at any time from **Docusign App Center → Connected Apps**.
 ## Need Help or Custom Support?
 - If you encounter any issues configuring your Odoo connection or require custom workflow integration, please reach out to our team:
 - **Email Support:** [support@epillars.com](mailto:support@epillars.com)
