@@ -3,7 +3,7 @@
 [project]
 site_name = "Documentation"
 url = "https://docs.epillars.com"
-copyright = "Copyright &copy; <year> ePillars Systems LLC. All rights reserved."
+copyright = "Copyright &copy; ePillars Systems LLC. All rights reserved."
 
 [project.theme]
 logo = "assets/logo.png"

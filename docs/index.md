@@ -55,8 +55,7 @@ Choose the **Writeback to Odoo** step to create or update customer records in Od
 <img src="assets/14-matching-rules.png" width="500" alt="Configure matching or filtering rules"> 
 
 ## Frequently Asked Questions
-### Do I need an active Odoo subscription?
-- Yes, you need access to an active Odoo instance (Community or Enterprise edition, hosted on Odoo.sh, self-hosted, or Odoo Online) with XML-RPC access enabled.
+
 ### Is my Odoo password stored by Docusign?
 - No. Passwords are processed securely over encrypted SSL connections to authenticate XML-RPC sessions and generate OAuth access tokens. Your credentials are never shared with third parties.
 ### What Odoo data models are supported?
