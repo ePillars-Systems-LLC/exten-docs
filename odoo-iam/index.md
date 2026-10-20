@@ -33,27 +33,23 @@ Click **Install App**.
 - After submitting your login details, review the requested access permissions on the Odoo OAuth Consent Screen and click **Allow Access** to establish the connection.
 ## How to Use the App
 - In the workflow builder, click **Add Step**, then choose **Read from Odoo** or **Writeback to Odoo** based on the workflow requirement.
-
-#### 1. Search and Select Records
+### 1. Search and Select Records
 Use the **Read from Odoo** action in Docusign workflows to query contacts by ID, name, email, or phone number directly from your active Odoo database.
 
 <img src="assets/10-search-records.png" width="500" alt="Search and select Odoo records">   <br>
 
-#### 2. Choose Read from Odoo
+#### Choose Read from Odoo
 <img src="assets/09-read-from-odoo.png" width="500" alt="Choose Read from Odoo">   <br>
-#### 3. Create and Update Records
-Choose the **Writeback to Odoo** step to create or update customer records in Odoo.
-
-1. Select the connection. <br>
-<img src="assets/11-select-connection.png" width="500" alt="Select the Odoo connection"> 
-
+### 2. Create and Update Records
+Choose the **Writeback to Odoo** step to create or update customer records in Odoo. 
+1. Select the connection. \
+![Select the Odoo connection](assets/11-select-connection.png)  <br>
 2. Select the fields.
 ![Select Odoo fields](assets/12-select-fields.png)  <br>
 3. Map the fields for the corresponding create or update action.
 ![Map fields for create or update](assets/13-map-fields.png)  <br>
-4. Create rules that identify the matching or filtering criteria. <br>
-<img src="assets/14-matching-rules.png" width="500" alt="Configure matching or filtering rules"> 
-
+4. Create rules that identify the matching or filtering criteria.
+![Configure matching or filtering rules](assets/14-matching-rules.png)  <br>
 ## Frequently Asked Questions
 ### Do I need an active Odoo subscription?
 - Yes, you need access to an active Odoo instance (Community or Enterprise edition, hosted on Odoo.sh, self-hosted, or Odoo Online) with XML-RPC access enabled.
