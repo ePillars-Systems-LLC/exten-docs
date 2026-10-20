@@ -1,5 +1,5 @@
 ---
-icon: lucide/clipboard-clock
+icon: material/
 tags:
   - Get started
 ---
