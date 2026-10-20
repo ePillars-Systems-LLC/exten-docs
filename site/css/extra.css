@@ -1,9 +1,0 @@
-/* Light theme */
-[data-md-color-scheme="default"] .md-logo img {
-    content: url("../assets/b-logo.png");
-}
-
-/* Dark theme */
-[data-md-color-scheme="slate"] .md-logo img {
-    content: url("../assets/w-logo.png");
-}
