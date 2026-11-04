@@ -1,4 +1,4 @@
-# Odoo for Docusign IAM
+# Docuware for Docusign IAM
 Learn how to install, configure, and use the Odoo Extension for Docusign to seamlessly synchronize customer records and agreement data between Docusign and your Odoo ERP.
 ## Overview
 The Odoo Extension for Docusign integrates your Odoo ERP database with Docusign App Center and eSignature workflows. It enables automated record verification, customer lookup, and automated data entry during and after agreement signing.
