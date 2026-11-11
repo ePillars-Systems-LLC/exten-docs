@@ -21,7 +21,7 @@ The integration enables users to:
 
 In your Docusign account, navigate to **App Center** and search for **DocuWare** by ePillars Systems LLC.
 
-![DocuWare app in Docusign App Center](docuwareasset/01-docuware-app-center.png)
+<img src="docuwareasset/01-docuware-app-center.png" width="500" alt="DocuWare app in Docusign App Center">
 
 Click **Install App**.
 
@@ -53,13 +53,7 @@ Enter a meaningful name to identify the DocuWare connection.
 
 <img src="docuwareasset/05-connection-name.png" width="500" alt="Name the DocuWare connection">
 
-For example:
-
-`DocuWare Production`
-
-or
-
-`DocuWare Test Environment`
+For example, `DocuWare Production` or `DocuWare Test Environment`.
 
 Click **Login** to continue.
 
@@ -76,102 +70,147 @@ Enter the following information:
 - **Username:** Your DocuWare user account.
 - **Password:** The password associated with your DocuWare account.
 
-Click **Connect Securely**.
-
-The application validates the connection information before proceeding to the authorization screen.
+Click **Connect Securely**. The application validates the connection information before proceeding to authorization.
 
 ### Step 6: Grant User Consent
 
 After entering the DocuWare connection details, the authorization page appears.
 
-<img src="docuwareasset/07-docuware-consent.png" width="500" alt="DocuWare OAuth authorization consent screen">
+<img src="docuwareasset/07-docuware-consent.png" width="500" alt="DocuWare authorization consent screen">
 
-Review the displayed information:
-
-- DocuWare Organization
-- DocuWare Username
-- Requested integration access
-
-Click **Allow Access** to authorize the connection between Docusign and DocuWare.
-
-After successful authorization, Docusign completes the connection process.
+Review the displayed DocuWare organization, username, and requested integration access. Click **Allow Access** to authorize the connection. After successful authorization, Docusign completes the connection process.
 
 ## How to Use the App
 
-The DocuWare Extension supports data retrieval, record creation, index-field updates, and signed-document storage through its configured Docusign capabilities.
+Open **Docusign Maestro Workflow Builder**, choose the workflow you want to configure, and click **Add Step**. Select the appropriate DocuWare extension action.
 
 ### 1. Read Data from DocuWare
 
-In Docusign Maestro Workflow Builder:
+Use **Read from DocuWare** to retrieve index fields from existing documents and make them available to later workflow steps.
 
-1. Open your workflow.
-2. Click **Add Step**.
-3. Select **Read from DocuWare**.
-4. Select your configured DocuWare connection.
-5. Choose the required File Cabinet.
-6. Configure the search criteria and select the document fields to retrieve.
+#### Step 1: Select the connection and DocuWare object
 
-The Read action can retrieve DocuWare index information for use in subsequent workflow steps.
+1. Add the **Read from DocuWare** step.
+2. Under **Where will you read from?**, select your configured connection, such as `DocuWare demo (Shared)`.
+3. Under **DocuWare object**, select the File Cabinet, such as `Accounting`.
+4. Click **Next**.
 
-For example, a workflow can search for a document using:
+<img src="docuwareasset/08-read-connection.png" width="500" alt="Read from DocuWare connection and File Cabinet selection">
 
-- Document ID
-- Company
-- Document Number
-- Document Type
-- Other searchable index fields configured in the File Cabinet
+#### Step 2: Choose which fields to read
+
+1. Open **Which fields would you like to read?**
+2. Click **Add or Remove Fields**.
+3. Select the required index fields. In the example, the selected fields are **Document ID**, **Document Type**, **Company**, **Document Number**, and **Approver**.
+4. Click **Save and Exit**, then continue to the next section.
+
+<img src="docuwareasset/09-read-select-fields.png" width="800" alt="Select DocuWare index fields to read">
+
+#### Step 3: Configure the record matching rule
+
+1. Under **Which records are you reading from?**, select the DocuWare field to search, such as **Company (string)**.
+2. Set the operator to **Equal to**.
+3. Under **Workflow field**, select the corresponding workflow variable, such as **Company**.
+4. Click **Done**.
+5. Choose **A single record** or **Multiple records**, depending on the expected results.
+6. Click **Apply** to save the step.
+
+<img src="docuwareasset/10-read-matching-rule.png" width="500" alt="Configure DocuWare read matching rule and record count">
+
+**Example:** Search the Accounting File Cabinet for documents whose **Company** index field equals the Company value supplied by the workflow. If you expect one specific document, use a unique identifier such as **Document ID** rather than a potentially repeated company name.
 
 ### 2. Create Records in DocuWare
 
-Use **Writeback to DocuWare** to create a new record.
+Use **Writeback to DocuWare** with the **Create** setting to create a record using workflow data.
 
-1. Click **Add Step** in Maestro Workflow Builder.
-2. Select **Writeback to DocuWare**.
-3. Select the DocuWare connection and File Cabinet.
-4. Choose **Create**.
-5. Select the DocuWare index fields to populate.
-6. Map the fields to workflow data or enter the required values.
-7. Save the step.
+#### Step 1: Choose the destination and Create action
 
-When the workflow executes successfully, the configured Create action submits the record information to DocuWare.
+1. Click **Add Step** and select **Writeback to DocuWare**.
+2. Under **Where will you write to?**, choose the DocuWare connection.
+3. Select the DocuWare object or File Cabinet, such as **Accounting**.
+4. Under **Write settings**, select **Create**.
+5. Click **Next**.
+
+<img src="docuwareasset/11-writeback-settings.png" width="500" alt="Writeback to DocuWare destination and Create Update options">
+
+#### Step 2: Map the index fields
+
+1. Click **Add or Remove Fields**.
+2. Select the DocuWare fields you want to populate, such as **Document Type**, **Document Number**, **Status**, and **Approver**.
+3. For each field, enter a value or use the **+** button to select a workflow variable.
+4. Continue through any remaining configuration required for your chosen Create action.
+5. Click **Apply** to save the step.
+
+<img src="docuwareasset/12-writeback-field-mapping.png" width="500" alt="Map DocuWare index fields in Writeback step">
+
+The configured Create action submits the mapped values when the workflow runs. Ensure the required fields and any document-creation requirements of the selected File Cabinet are satisfied.
 
 ### 3. Update Existing DocuWare Index Fields
 
-Use **Writeback to DocuWare → Update** to modify index fields on an existing document.
+Use **Writeback to DocuWare** with the **Update** setting to modify index fields on an existing document.
+
+#### Step 1: Choose the destination and Update action
 
 1. Add a **Writeback to DocuWare** step.
-2. Select the DocuWare connection.
-3. Choose the required File Cabinet.
-4. Select **Update**.
-5. Select the index fields to update.
-6. Map each selected field to the required workflow value.
-7. Configure a matching rule to identify the existing document.
+2. Select your connection and File Cabinet.
+3. Under **Write settings**, choose **Update**.
+4. Click **Next**.
 
-**Example: Updating a document status**
+<img src="docuwareasset/11-writeback-settings.png" width="500" alt="Select Update in DocuWare Writeback settings">
 
-- **File Cabinet:** Accounting
-- **Field to update:** Status
-- **New value:** Approved
-- **Matching field:** Document ID
-- **Operator:** Equal to
-- **Workflow value:** Document ID of the existing DocuWare record
+#### Step 2: Select fields and map their new values
 
-The matching value must identify the intended document. When using a dynamic workflow field, ensure that it contains a valid Document ID before the Writeback step executes.
+1. Under **Which fields are you writing to?**, click **Add or Remove Fields**.
+2. Select the fields you want to update, such as **Status**.
+3. Enter a fixed value, such as `Approved`, or use the **+** button to map a workflow field.
+4. Click **Next**.
 
-Once the workflow completes successfully, the selected index fields are updated in DocuWare.
+<img src="docuwareasset/12-writeback-field-mapping.png" width="500" alt="Select and map fields to update in DocuWare">
+
+#### Step 3: Identify the document to update
+
+1. Under **Which record are you writing to?**, select **Document ID (string)**.
+2. Set **Operator** to **Equal to**.
+3. For **Workflow field**, select the **Document ID** output from an earlier **Read from DocuWare** step.
+4. Click **Done**, then **Apply**.
+
+<img src="docuwareasset/13-writeback-matching-rule.png" width="500" alt="Match DocuWare update to existing Document ID">
+
+**Example:** Update the **Status** field to `Approved` in the Accounting File Cabinet where the **Document ID** matches the ID returned by the earlier Read step.
+
+**Important:** The matching Document ID must refer to the intended existing document. Avoid using a broad matching rule that could identify multiple records.
 
 ### 4. Store Signed Documents in DocuWare
 
-The extension also includes a File Output capability for storing completed Docusign documents in DocuWare.
+Use the extension's **File Output System of Record** action to store a completed Docusign document against an existing DocuWare record.
 
-Depending on the configured workflow and extension capabilities, users can:
+#### Step 1: Choose the file to store
 
-- Select a DocuWare destination.
-- Store completed signed documents.
-- Associate signed documents with existing DocuWare records.
-- Maintain signed documents within the organization's document management environment.
+1. Add the DocuWare File Output System of Record extension step to your Maestro workflow.
+2. Under **You're storing a file**, select a document or envelope from an earlier workflow step.
+3. Click **Next**.
 
-Configure the destination and required document information in the relevant Docusign workflow or supported file-output process.
+<img src="docuwareasset/14-store-select-file.png" width="500" alt="Select Docusign file or envelope to store">
+
+#### Step 2: Select the DocuWare destination
+
+1. Under **Where are you storing it?**, choose the DocuWare connection.
+2. Under **Select record**, map the **Document ID** of the existing DocuWare record.
+3. Under **Object**, choose the corresponding DocuWare File Cabinet, such as `DW_3_Accounting`.
+4. Click **Next**.
+
+<img src="docuwareasset/15-store-select-location.png" width="500" alt="Select DocuWare connection existing record and object">
+
+#### Step 3: Configure the stored file name
+
+1. Under **What will you call it?**, enter the desired file-name text or add workflow variables.
+2. Use the file-name controls to build the required name.
+3. Review the selected **Object ID** and destination details.
+4. Click **Apply** to save the step.
+
+<img src="docuwareasset/16-store-file-name.png" width="500" alt="Configure stored document file name and review destination">
+
+When the workflow runs successfully, the File Output action sends the selected file to the configured DocuWare destination. The screenshots demonstrate selecting an **existing record** using its Document ID; confirm that this ID is available from a preceding step.
 
 ## Frequently Asked Questions
 
@@ -181,42 +220,37 @@ The integration is designed to work with DocuWare Cloud and supported on-premise
 
 ### Can multiple users connect using different DocuWare accounts?
 
-Yes. The integration is designed to support separate DocuWare connections for different users and organizations, subject to the configured connection permissions.
+Yes. The integration is designed to support separate DocuWare connections for different users and organizations, subject to configured connection permissions.
 
 ### What is the difference between Private and Shared connections?
 
 - **Private:** Intended for use by the individual connection owner.
-- **Shared:** Allows the connection to be made available to other authorized users according to Docusign's connection-sharing settings.
+- **Shared:** Can be made available to authorized users according to Docusign connection-sharing settings.
 
 ### Is my DocuWare password stored by Docusign?
 
-The extension uses an OAuth connection flow between Docusign and the ePillars integration service. The DocuWare credentials are submitted to the integration service over HTTPS for authentication.
-
-Credential and token storage are managed according to the integration service's configured authentication and security implementation. Consult your administrator or ePillars support for deployment-specific storage details.
+The extension uses an OAuth connection flow between Docusign and the ePillars integration service. DocuWare credentials are submitted to the integration service over HTTPS for authentication. Credential and token storage depend on the integration service's configured security implementation. Consult your administrator or ePillars support for deployment-specific details.
 
 ### Can I update existing DocuWare documents?
 
-Yes. The **Writeback to DocuWare → Update** action can update supported document index fields when the workflow correctly identifies the existing document.
+Yes. **Writeback to DocuWare → Update** can update supported document index fields when the workflow correctly identifies the existing document.
 
 ### Can I create new records in DocuWare?
 
-Yes. The extension supports creating records through its configured Data IO Create action.
+Yes. The extension provides a **Create** action. The requirements depend on the selected File Cabinet and its configuration.
 
 ### Can I store completed Docusign documents in DocuWare?
 
-Yes. The extension includes a File Output capability for storing completed signed documents in DocuWare, subject to the configured destination and workflow.
+Yes. The File Output capability can store a selected completed document against a configured DocuWare destination, subject to the workflow and connection configuration.
 
 ### How do I revoke access?
 
-You can disconnect or remove the connection using the available Docusign App Center or connected-app management options.
-
-Contact your administrator if you need to revoke associated integration access or credentials.
+Disconnect or remove the connection using the available Docusign App Center or connected-app management options. Contact your administrator if associated integration access or credentials must also be revoked.
 
 ## Need Help or Custom Support?
 
-If you encounter issues installing the DocuWare Extension, configuring authentication, creating workflows, updating index fields, or storing signed documents, contact the ePillars Systems support team.
+If you encounter issues installing the extension, configuring authentication, creating workflows, updating index fields, or storing signed documents, contact ePillars Systems.
 
 - **Email Support:** [support@epillars.com](mailto:support@epillars.com)
 - **Contact Portal:** [https://www.epillars.com/contact](https://www.epillars.com/contact)
 - **Website:** [https://www.epillars.com](https://www.epillars.com)
-
