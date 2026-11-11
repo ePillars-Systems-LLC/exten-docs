@@ -214,10 +214,6 @@ When the workflow runs successfully, the File Output action sends the selected f
 
 ## Frequently Asked Questions
 
-### Does the DocuWare Extension support DocuWare Cloud and on-premises installations?
-
-The integration is designed to work with DocuWare Cloud and supported on-premises environments. Connectivity and authentication requirements may vary by deployment.
-
 ### Can multiple users connect using different DocuWare accounts?
 
 Yes. The integration is designed to support separate DocuWare connections for different users and organizations, subject to configured connection permissions.
@@ -226,10 +222,6 @@ Yes. The integration is designed to support separate DocuWare connections for di
 
 - **Private:** Intended for use by the individual connection owner.
 - **Shared:** Can be made available to authorized users according to Docusign connection-sharing settings.
-
-### Is my DocuWare password stored by Docusign?
-
-The extension uses an OAuth connection flow between Docusign and the ePillars integration service. DocuWare credentials are submitted to the integration service over HTTPS for authentication. Credential and token storage depend on the integration service's configured security implementation. Consult your administrator or ePillars support for deployment-specific details.
 
 ### Can I update existing DocuWare documents?
 
@@ -249,7 +241,7 @@ Disconnect or remove the connection using the available Docusign App Center or c
 
 ## Need Help or Custom Support?
 
-If you encounter issues installing the extension, configuring authentication, creating workflows, updating index fields, or storing signed documents, contact ePillars Systems.
+If you encounter issues installing the extension, configuring authentication, creating workflows, updating index fields, or storing signed documents, contact ePillars Systems LLC.
 
 - **Email Support:** [support@epillars.com](mailto:support@epillars.com)
 - **Contact Portal:** [https://www.epillars.com/contact](https://www.epillars.com/contact)
