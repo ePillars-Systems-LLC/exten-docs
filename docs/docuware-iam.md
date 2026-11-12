@@ -214,6 +214,10 @@ When the workflow runs successfully, the File Output action sends the selected f
 
 ## Frequently Asked Questions
 
+### Does the DocuWare Extension support DocuWare Cloud and on-premises installations?
+
+Currently, the DocuWare Extension supports DocuWare Cloud only. Support for DocuWare on-premises installations is planned for a future release.
+
 ### Can multiple users connect using different DocuWare accounts?
 
 Yes. The integration is designed to support separate DocuWare connections for different users and organizations, subject to configured connection permissions.
