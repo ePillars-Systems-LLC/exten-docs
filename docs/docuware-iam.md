@@ -212,6 +212,14 @@ Use the extension's **File Output System of Record** action to store a completed
 
 When the workflow runs successfully, the File Output action sends the selected file to the configured DocuWare destination. The screenshots demonstrate selecting an **existing record** using its Document ID; confirm that this ID is available from a preceding step.
 
+### Important Search Information
+
+1. **File Extension:** When searching by file extension, always include a dot (`.`) before the extension. Examples: `.pdf`, `.docx`, `.xlsx`, `.txt`.
+
+2. **Format:** The Format field represents the **DocuWare document version**, not the file type. For example, use `Format = 7` to search for documents matching version 7.
+
+3. **Search Criteria:** Ensure the search values match the corresponding DocuWare fields to retrieve the correct records.
+
 ## Frequently Asked Questions
 
 ### Does the DocuWare Extension support DocuWare Cloud and on-premises installations?
