@@ -212,13 +212,18 @@ Use the extension's **File Output System of Record** action to store a completed
 
 When the workflow runs successfully, the File Output action sends the selected file to the configured DocuWare destination. The screenshots demonstrate selecting an **existing record** using its Document ID; confirm that this ID is available from a preceding step.
 
-### Important Search Information
+### Important Information
 
-1. **File Extension:** When searching by file extension, always include a dot (`.`) before the extension. Examples: `.pdf`, `.docx`, `.xlsx`, `.txt`.
+### DocuWare System Fields
 
-2. **Format:** The Format field represents the **DocuWare document version**, not the file type. For example, use `Format = 7` to search for documents matching version 7.
+1. All DocuWare system fields, such as Version, Total Pages, Format, etc., are hidden except Document ID.
+2. Fulltext is available only for searching, not when creating or updating records.
 
-3. **Search Criteria:** Ensure the search values match the corresponding DocuWare fields to retrieve the correct records.
+### Table Field Support
+
+1. Tables are supported only in Store dialogs, Index dialogs, and Workflows.
+2. Tables cannot be added to Search dialogs.
+3. Table content can only be searched using Fulltext Search.
 
 ## Frequently Asked Questions
 
