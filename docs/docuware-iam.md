@@ -220,12 +220,6 @@ When the workflow runs successfully, the File Output action sends the selected f
 2. Fulltext is available only for searching, not when creating or updating records.
 3. DocuWare table fields are currently not supported for Data Read and Data Write operations in the DocuSign integration.
 
-### Table Field Support
-
-1. Tables are supported only in Store dialogs, Index dialogs, and Workflows.
-2. Tables cannot be added to Search dialogs.
-3. Table content can only be searched using Fulltext Search.
-
 ## Frequently Asked Questions
 
 ### Does the DocuWare Extension support DocuWare Cloud and on-premises installations?
