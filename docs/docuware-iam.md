@@ -214,11 +214,11 @@ When the workflow runs successfully, the File Output action sends the selected f
 
 ### Important Information
 
-### DocuWare System Fields
-
 1. All DocuWare system fields, such as Version, Total Pages, Format, etc., are hidden except Document ID.
 2. Fulltext is available only for searching, not when creating or updating records.
-3. DocuWare table fields are currently not supported for Data Read and Data Write operations in the DocuSign integration.
+3. DocuWare table fields are currently not supported for Data Read and Data Write operations in the Docusign integration.
+4. Normal text searches work as expected. However, certain special characters have search limitations in both Index Field and Full-text searches due to DocuWare's native search behaviour.
+### Reference: https://knowledgecenter.docuware.com/docs/searching-with-operators
 
 ## Frequently Asked Questions
 
